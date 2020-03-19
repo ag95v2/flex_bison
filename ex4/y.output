@@ -1,0 +1,112 @@
+Terminals unused in grammar
+
+   ADVERB
+   ADJECTIVE
+   PREPOSITION
+   CONJUNCTION
+
+
+Grammar
+
+    0 $accept: sentence $end
+
+    1 sentence: subject VERB object
+
+    2 subject: NOUN
+    3        | PRONOUN
+
+    4 object: NOUN
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+NOUN (258) 2 4
+PRONOUN (259) 3
+VERB (260) 1
+ADVERB (261)
+ADJECTIVE (262)
+PREPOSITION (263)
+CONJUNCTION (264)
+
+
+Nonterminals, with rules where they appear
+
+$accept (10)
+    on left: 0
+sentence (11)
+    on left: 1, on right: 0
+subject (12)
+    on left: 2 3, on right: 1
+object (13)
+    on left: 4, on right: 1
+
+
+State 0
+
+    0 $accept: . sentence $end
+
+    NOUN     shift, and go to state 1
+    PRONOUN  shift, and go to state 2
+
+    sentence  go to state 3
+    subject   go to state 4
+
+
+State 1
+
+    2 subject: NOUN .
+
+    $default  reduce using rule 2 (subject)
+
+
+State 2
+
+    3 subject: PRONOUN .
+
+    $default  reduce using rule 3 (subject)
+
+
+State 3
+
+    0 $accept: sentence . $end
+
+    $end  shift, and go to state 5
+
+
+State 4
+
+    1 sentence: subject . VERB object
+
+    VERB  shift, and go to state 6
+
+
+State 5
+
+    0 $accept: sentence $end .
+
+    $default  accept
+
+
+State 6
+
+    1 sentence: subject VERB . object
+
+    NOUN  shift, and go to state 7
+
+    object  go to state 8
+
+
+State 7
+
+    4 object: NOUN .
+
+    $default  reduce using rule 4 (object)
+
+
+State 8
+
+    1 sentence: subject VERB object .
+
+    $default  reduce using rule 1 (sentence)

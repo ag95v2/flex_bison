@@ -1,0 +1,24 @@
+
+Ex00
+Lex echo implementation.
+Simplest lex program
+
+Ex01
+Verb/not verb word recognition
+
+Ex02
+Added more complicated examples to ex01 (nouns, etc). Nothing changed actually.
+
+Ex03
+Dynamic lookup table. User can declare words in runtime, lexer can recognize
+declaration or usage of symbols.
+
+Ex04
+First program with yacc.
+Contains bugs
+
+Ex05 
+Extension of ex04
+
+t1
+a^nb^n grammar
