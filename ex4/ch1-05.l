@@ -3,7 +3,7 @@
  * We now build a lexical analyzer to be used by a higher-level parser.
  */
 
-#include "ch1-05y.h"	/* token codes from the parser */
+#include "y.tab.h"
 
 #define LOOKUP 0 /* default - not a defined word type. */
 
@@ -13,19 +13,11 @@ int state;
 
 %%
 
-\n	{ state = LOOKUP; }
-
-\.\n	{	state = LOOKUP;
-		return 0; /* end of sentence */
-	}
+\n	{ state = LOOKUP; printf("%s\n", "lexer returns 0 token");
+	return (0);}
 
 ^verb	{ state = VERB; }
-^adj	{ state = ADJECTIVE; }
-^adv	{ state = ADVERB; }
 ^noun	{ state = NOUN; }
-^prep	{ state = PREPOSITION; }
-^pron	{ state = PRONOUN; }
-^conj	{ state = CONJUNCTION; }
 
 [a-zA-Z]+ { 
 	     if(state != LOOKUP) {
@@ -33,21 +25,11 @@ int state;
 	     } else {
 		switch(lookup_word(yytext)) {
 		case VERB:
-			printf("verb\n");
+			printf("lexer returns verb\n");
 		  return(VERB);
-		case ADJECTIVE:
-		  return(ADJECTIVE);
-		case ADVERB:
-		  return(ADVERB);
 		case NOUN:
-			printf("noun\n");
+			printf("lexer returns noun\n");
 		  return(NOUN);
-		case PREPOSITION:
-		  return(PREPOSITION);
-		case PRONOUN:
-		  return(PRONOUN);
-		case CONJUNCTION:
-		  return(CONJUNCTION);
 		default:
 		  printf("%s:  don't recognize\n", yytext);
 		  /* don't return, just ignore it */

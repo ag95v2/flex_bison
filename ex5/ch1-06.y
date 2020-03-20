@@ -43,7 +43,7 @@ extern FILE *yyin;
 
 main()
 {
-	while(!feof(yyin)) {
+	while(!feof(stdin)) {
 		yyparse();
 	}
 }

@@ -5,17 +5,12 @@
 #include <stdio.h>
 %}
 
-%token NOUN PRONOUN VERB ADVERB ADJECTIVE PREPOSITION CONJUNCTION
+%token NOUN VERB 
+
+%error-verbose
 
 %%
-sentence: subject VERB object	{ printf("Sentence is valid.\n"); }
-	;
-
-subject:	NOUN				{printf("Subject recognized\n"); }
-	|	PRONOUN
-	;
-
-object:		NOUN				{printf("Object recognized\n"); }
+sentence: NOUN VERB NOUN { printf("Sentence is valid.\n"); }
 	;
 %%
 

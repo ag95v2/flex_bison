@@ -46,12 +46,22 @@ extern int yydebug;
   enum yytokentype
   {
     NOUN = 258,
-    VERB = 259
+    PRONOUN = 259,
+    VERB = 260,
+    ADVERB = 261,
+    ADJECTIVE = 262,
+    PREPOSITION = 263,
+    CONJUNCTION = 264
   };
 #endif
 /* Tokens.  */
 #define NOUN 258
-#define VERB 259
+#define PRONOUN 259
+#define VERB 260
+#define ADVERB 261
+#define ADJECTIVE 262
+#define PREPOSITION 263
+#define CONJUNCTION 264
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
