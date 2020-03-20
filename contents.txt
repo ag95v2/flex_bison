@@ -14,11 +14,8 @@ Dynamic lookup table. User can declare words in runtime, lexer can recognize
 declaration or usage of symbols.
 
 Ex04
-First program with yacc.
-Contains bugs
-
-Ex05 
-Extension of ex04
+First program with yacc. 
+Lexer has a lookup table, parser has single rule.
 
 t1
 a^nb^n grammar

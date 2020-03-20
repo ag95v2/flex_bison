@@ -13,8 +13,9 @@ int state;
 
 %%
 
-\n	{ state = LOOKUP; printf("%s\n", "lexer returns 0 token");
-	return (0);}
+\n	{ state = LOOKUP;}
+
+\.\n	{return (0);}
 
 ^verb	{ state = VERB; }
 ^noun	{ state = NOUN; }
