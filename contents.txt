@@ -19,3 +19,17 @@ Lexer has a lookup table, parser has single rule.
 
 t1
 a^nb^n grammar
+
+wc
+Lex version of UNIX wc utility.
+First use of lex definitions section and yyleng internal variable.
+When 2 rules match lex uses the one that was added EARLIER.
+lex uses longest string to match
+
+wc_multiple_files
+Wc thich can handle multiple files.
+First usage of yywrap() function that is called after EOF.
+Still need to debug. Hangs on single file inside yylex().
+Debug later that stuff.
+
+
