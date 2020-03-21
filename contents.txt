@@ -45,4 +45,14 @@ c_course
 C source code analyzer. Count blankm comments, codelines
 
 calc0
+Simplest calculator. Deals only with int numbers, + and -. 
+Both operations are left-associative.
+
+calc1
+Added division, unary minus, brackets and multiplication to previous examle.
+Added declarations of operator precedence and associativity.
+Instead of explicit precedence declarations we could use implicit - 
+add symbols like product and sum and grammars with them
+
+
 
