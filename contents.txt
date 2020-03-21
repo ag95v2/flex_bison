@@ -18,7 +18,7 @@ First program with yacc.
 Lexer has a lookup table, parser has single rule.
 
 t1
-a^nb^n grammar
+a^nb^n grammar resolution
 
 wc
 Lex version of UNIX wc utility.
@@ -32,4 +32,14 @@ First usage of yywrap() function that is called after EOF.
 Still need to debug. Hangs on single file inside yylex().
 Debug later that stuff.
 
+argparse** (yet does not compile with bison)
+redefines macros input and uinput 
+to read from command line arguments (or custom string) instead of stdin.
+First use of "start state" that helps to parse context-dependent input.
 
+start_state
+Another trivial example of context-dependent lexer
+
+
+c_course
+C source code analyzer. Count blankm comments, codelines
