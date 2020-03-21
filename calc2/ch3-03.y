@@ -38,3 +38,15 @@ expression:	expression '+' expression { $$ = $1 + $3; }
 	|	NAME			{ $$ = vbltable[$1]; }
 	;
 %%
+
+int	yyerror()
+{
+	printf("Syntax error!\n");
+}
+
+int	main()
+{
+	yyparse();
+	return (0);
+}
+

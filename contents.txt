@@ -54,5 +54,17 @@ Added declarations of operator precedence and associativity.
 Instead of explicit precedence declarations we could use implicit - 
 add symbols like product and sum and grammars with them
 
+calc2
+Added single-letter variables to calc1.
+First use of typed tokens and typed nonterminals.
+y.tab.h contains declaration type YYSTYPE and variable	yylval 
+#define NAME 257
+#define NUMBER 258
+#define UMINUS 259
+typedef union {
+double dval;
+int vblno;
+} YYSTYPE;
+extern YYSTYPE yylval;}
 
-
+First use of end of input pattern ($). 
