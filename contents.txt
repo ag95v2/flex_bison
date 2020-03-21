@@ -68,3 +68,17 @@ int vblno;
 extern YYSTYPE yylval;}
 
 First use of end of input pattern ($). 
+
+calc3
+Added symbol table to calc2.
+Symbol table is implemented as array of fixed size.
+Now we can declare variable names of arbitrary length.
+
+calc4
+Added simple mathematical functions like exp(), log(), sqrt()... to calc3.
+
+In our case parser resolves function names. 
+(We could also hardcode function names as tokens or make symbol table lookup 
+ by lexer, not parser)
+
+Functions and variable names can overlap.

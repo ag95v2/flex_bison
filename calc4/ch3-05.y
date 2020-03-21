@@ -71,6 +71,14 @@ char *s;
 	exit(1);	/* cannot continue */
 } /* symlook */
 
+int	yyerror(char *s)
+{
+	if (s)
+		printf("%s\n", s);
+	else
+		printf("error\n");
+}
+
 addfunc(name, func)
 char *name;
 double (*func)();

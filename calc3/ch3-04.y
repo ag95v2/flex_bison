@@ -37,6 +37,7 @@ expression:	expression '+' expression { $$ = $1 + $3; }
 	|	NUMBER
 	|	NAME			{ $$ = $1->value; }
 	;
+
 %%
 /* look up a symbol table entry, add if not present */
 struct symtab *
@@ -45,12 +46,12 @@ char *s;
 {
 	char *p;
 	struct symtab *sp;
-	
+
 	for(sp = symtab; sp < &symtab[NSYMS]; sp++) {
 		/* is it already here? */
 		if(sp->name && !strcmp(sp->name, s))
 			return sp;
-		
+
 		/* is it free */
 		if(!sp->name) {
 			sp->name = strdup(s);
@@ -61,3 +62,17 @@ char *s;
 	yyerror("Too many symbols");
 	exit(1);	/* cannot continue */
 } /* symlook */
+
+int	yyerror(char *s)
+{
+	if  (s)
+		printf("%s\n", s);
+	else
+		printf("%s\n", "Error!");
+}
+
+int	main()
+{
+	yyparse();
+	return (0);
+}
