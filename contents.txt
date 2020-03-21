@@ -43,3 +43,6 @@ Another trivial example of context-dependent lexer
 
 c_course
 C source code analyzer. Count blankm comments, codelines
+
+calc0
+
